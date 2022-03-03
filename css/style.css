@@ -34,6 +34,20 @@ header{
     background-color: gray;
     border-radius: 3px;
 }
+.header-btn:hover{
+    color: black;
+    animation-name: bigger;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes bigger {
+    from{
+        font-size: 1em;
+    }
+    to{
+        font-size: 2em;
+    }
+}
 
 
 /* MAIN */
@@ -54,20 +68,28 @@ main{
     flex-basis: 190px;   /* width */
     background: url(https://picsum.photos/190/110) no-repeat center;
     position: relative;
+    cursor: pointer;
 }
-.box div{
+.box>div{
     display: inline-block;
     position: absolute;
     left: 0;
     bottom: 0;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.5);
+    
 }
+.box:hover>div{
+    background-color: black;
+    color: red;
+}
+
+/* NAV */
+
 nav{
     display: flex;
     flex-flow: row wrap;
     height: 70px;
-    /* background-color: red; */
     background-color: #222222;
     position: fixed;
     bottom: 0;
@@ -76,19 +98,32 @@ nav{
     align-items: center;
     text-align: center;
 }
+
+/* sezioni della nav */
+.nav-section{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
 .nav-center{
     flex-grow: 1;
 }
 .nav-left{
     flex-grow: 0;
 }
+.nav-right{
+    cursor: pointer;
+    flex-grow: 0;
+    align-self: stretch;
+    background-color: #4A4A4A;
+    color: red;
+    padding: 0 20px;
+}
+/* / sezioni nav */
 
+/* abbellimenti */
 .btn-menu{
     margin-left: 10px;
-}
-.nav-right{
-    flex-grow: 0;
-    margin-right: 20px;
 }
 .nav-btn-container{
     display: flex;
@@ -96,25 +131,20 @@ nav{
     align-items: center;
     margin: 15px;
 }
-.nav-section{
-    justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
 .nav-section .nav-btn i{
     font-size: 2em;
     margin-bottom: 5px;
 }
-
-
-.nav-right{
-    align-self: stretch;
-    background-color: #4A4A4A;
-    color: red;
-    padding: 0 20px;
-    margin: 0;
-}
 .fa-share-from-square{
     color: #4BC800;
+}
+.nav-right:hover{
+    color: white;
+    background-color: red;
+}
+.nav-btn, .btn-menu{
+    cursor: pointer;
+}
+.nav-btn-container:hover{
+    color: red;
 }
